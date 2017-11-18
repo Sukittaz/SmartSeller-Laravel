@@ -2,7 +2,7 @@
 
 @section('content')
 	<div style="padding-bottom: 10px;">
-	  <a style="width: 110px;" href="<?php echo BASE; ?>supplier/add" class="btn btn-info">
+	  <a style="width: 110px;" href="/supplier/add" class="btn btn-info">
 	    <i class="fa fa-plus"></i> Criar
 	  </a>  
 	</div>
@@ -25,19 +25,19 @@
 	      </tr>
 	      </thead>
 	      <tbody>
-	      <?php foreach($supplier as $supplierItem): ?>
-	      <tr>
-	        <td><?php echo $supplierItem->SupplierName; ?></td>
-	        <td><?php echo $supplierItem->SupplierEmail; ?></td>
-	        <td><?php echo $supplierItem->SupplierPhone; ?></td>
-	        <td><?php echo $supplierItem->SupplierCNPJ; ?></td>
-	        <td style='width: 80px;'>
-	          <a class='fa fa-search-plus fa-2x' href="<?php echo BASE; ?>supplier/view/<?php echo $supplierItem->SupplierID; ?>"/>
-	          <a class='fa fa-pencil-square fa-2x' href="<?php echo BASE; ?>supplier/edit/<?php echo $supplierItem->SupplierID; ?>"/>
-	          <a class='fa fa-trash fa-2x' href="<?php echo BASE; ?>supplier/delete/<?php echo $supplierItem->SupplierID; ?>"/>
-	        </td>   
-	      </tr>
-	      <?php endforeach; ?>
+          @foreach ($supplier as $item)
+		      <tr>
+		        <td>{{ $item->SupplierName }}</td>
+		        <td>{{ $item->SupplierEmail }}</td>
+		        <td>{{ $item->SupplierPhone }}</td>
+		        <td>{{ $item->SupplierCNPJ }}</td>
+		        <td>
+		          <a class='fa fa-search-plus' href=""/>
+		          <a class='fa fa-pencil-square' href=""/>
+		          <a class='fa fa-trash' href=""/>
+		        </td>   
+		      </tr>
+	      @endforeach
 	      </tbody>
 	    </table>
 	  </div>

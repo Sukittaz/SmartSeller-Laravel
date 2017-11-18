@@ -8,6 +8,7 @@
 		<!-- /.box-header -->
 		<!-- form start -->
 		<form role="form" method="POST">
+        {{ csrf_field() }}
 		  <div class="box-body">
 		    <div class="form-group">
 		      <label>Nome</label>

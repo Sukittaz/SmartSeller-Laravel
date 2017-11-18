@@ -16,18 +16,39 @@ class CostumerController extends Controller {
     }
 
     public function add(Request $request) {
-		// if ($request->has('submit')) {
-		// 	$categoryName = $request->input('CategoryName');
+		if ($request->has('submit')) {
+			$costumerName 		  = $request->input('CostumerName');
+			$costumerCPF 		  = $request->input('CostumerCPF');
+			$costumerEmail 		  = $request->input('CostumerEmail');
+			$costumerPhone 		  = $request->input('CostumerPhone');
+			$costumerCEP 		  = $request->input('CostumerCEP');
+			$costumerAddres 	  = $request->input('CostumerAddres');
+			$costumerAddresNumber = $request->input('CostumerAddresNumber');
+			$costumerNeigh 		  = $request->input('CostumerNeigh');
+			$costumerUF 		  = $request->input('CostumerUF');
+			$costumerCity 		  = $request->input('CostumerCity');
+			$costumerCountry 	  = $request->input('CostumerCountry');
+			$costumerDetail 	  = $request->input('CostumerDetail');
 
-		// 	$category 				= new Category;
-		// 	$category->CompanyID 	= 1;
-		// 	$category->CategoryName = $categoryName;
-		// 	$category->save();
+			$costumer 						= new Costumer;
+			$costumer->CompanyID 			= 1;
+			$costumer->CostumerName 		= $costumerName;
+			$costumer->CostumerCPF 			= $costumerCPF;
+			$costumer->CostumerEmail 		= $costumerEmail;
+			$costumer->CostumerPhone 		= $costumerPhone;
+			$costumer->CostumerCEP 			= $costumerCEP;
+			$costumer->CostumerAddres 		= $costumerAddres;
+			$costumer->CostumerAddresNumber = $costumerAddresNumber;
+			$costumer->CostumerNeigh 		= $costumerNeigh;
+			$costumer->CostumerUF 			= $costumerUF;
+			$costumer->CostumerCity 		= $costumerCity;
+			$costumer->CostumerCountry 		= $costumerCountry;
+			$costumer->CostumerDetail 		= $costumerDetail;
+			$costumer->save();
 
-		// 	return redirect('/category');
-		// }
+			return redirect('/costumer');
+		}
 
-    	return view('category-add');	
+    	return view('costumer-add');	
     }
-
 }

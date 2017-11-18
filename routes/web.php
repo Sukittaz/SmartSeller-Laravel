@@ -44,11 +44,17 @@ Route::post('user/add', 'UserController@add');
 /* Routes Costumer */
 Route::get('costumer', 'CostumerController@index');
 Route::get('costumer/add', 'CostumerController@add');
-Route::get('costumer/add', 'CostumerController@add');
+Route::post('costumer/add', 'CostumerController@add');
+
+/* Routes Supplier */
+Route::get('supplier', 'SupplierController@index');
+Route::get('supplier/add', 'SupplierController@add');
+Route::post('supplier/add', 'SupplierController@add');
+
+/* Routes Supplier */
+Route::get('company', 'CompanyController@index');
 
 
 Route::get('bunch', 'BunchController@index');
-Route::get('company', 'CompanyController@index');
 Route::get('purchase', 'PurchaseController@index');
 Route::get('sale', 'SaleController@index');
-Route::get('supplier', 'SupplierController@index');
