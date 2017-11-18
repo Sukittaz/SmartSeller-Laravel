@@ -7,7 +7,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ asset("/bower_components/admin-lte/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />
+                <img src="{{ asset("/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>Alexander Pierce</p>
@@ -16,30 +16,84 @@
             </div>
         </div>
 
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-<span class="input-group-btn">
-  <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-</span>
-            </div>
-        </form>
-        <!-- /.search form -->
-
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><span>Link</span></a></li>
-            <li><a href="#"><span>Another Link</span></a></li>
-            <li class="treeview">
-                <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
-                </ul>
+            <li>
+              <a href="">
+                <i class="fa fa-dashboard"></i><span>DashBoard</span>
+              </a>
             </li>
+            <li>
+              <a href="">
+                <i class="fa fa-money"></i><span>PDV</span>
+              </a>
+            </li>  
+            <li>
+              <a href="/product">
+                <i class="fa fa-barcode"></i><span>Produtos</span>
+              </a>
+            </li>   
+            <li>
+              <a href="/category">
+                <i class="fa fa-folder"></i><span>Categorias</span>
+              </a>
+            </li>   
+            <li>
+              <a href="">
+                <i class="fa fa-shopping-cart"></i><span>Vendas</span>
+              </a>
+            </li>   
+            <li>
+              <a href="">
+                <i class="fa fa-plus"></i><span>Compras</span>
+              </a>
+            </li>   
+            <li>
+              <a href="/expense">
+                <i class="fa fa-minus"></i><span>Despesas</span>
+              </a>
+            </li>     
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-users"></i>
+                <span>Pessoas</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i>Grupos</a></li>
+                <li><a href="/user"><i class="fa fa-circle-o"></i>Usuários</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Clientes</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Fornecedores</a></li>
+              </ul>
+            </li>  
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-bar-chart-o"></i>
+                <span>Relátorios</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i>Vendas Diárias</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Vendas Mensais</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Produtos mais vendidos</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-cogs"></i>
+                <span>Configuração</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href=""><i class="fa fa-circle-o"></i>Empresa</a></li>
+              </ul>
+            </li>             
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

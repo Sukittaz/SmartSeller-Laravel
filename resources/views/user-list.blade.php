@@ -2,7 +2,7 @@
 
 @section('content')
 	<div style="padding-bottom: 10px;">
-	  <a style="width: 110px;" href="<?php echo BASE; ?>user/add" class="btn btn-info">
+	  <a style="width: 110px;" href="user/add" class="btn btn-info">
 	    <i class="fa fa-plus"></i> Criar
 	  </a>  
 	</div>
@@ -24,18 +24,18 @@
 	      </tr>
 	      </thead>
 	      <tbody>
-	      <?php foreach($user as $userItem): ?>
+          @foreach ($user as $item)
 	      <tr>
-	        <td><?php echo $userItem->UserName; ?></td>
-	        <td><?php echo $userItem->UserEmail; ?></td>
-	        <td><?php echo $userItem->BunchName; ?></td>
-	        <td style='width: 80px;'>
-	          <a class='fa fa-search-plus fa-2x' href="<?php echo BASE; ?>user/view/<?php echo $userItem->UserID; ?>"/>
-	          <a class='fa fa-pencil-square fa-2x' href="<?php echo BASE; ?>user/edit/<?php echo $userItem->UserID; ?>"/>
-	          <a class='fa fa-trash fa-2x' href="<?php echo BASE; ?>user/delete/<?php echo $userItem->UserID; ?>"/>
+	        <td>{{ $item->UserName }}</td>
+	        <td>{{ $item->UserEmail }}</td>
+	        <td>{{ $item->BunchID }}</td>
+	        <td>
+	          <a class='fa fa-search-plus' href=""/>
+	          <a class='fa fa-pencil-square' href=""/>
+	          <a class='fa fa-trash' href=""/>
 	        </td>   
 	      </tr>
-	      <?php endforeach; ?>
+	      @endforeach
 	      </tbody>
 	    </table>
 	  </div>

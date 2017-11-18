@@ -3,11 +3,12 @@
 @section('content')
 	<div class="box box-primary">
 	<div class="box-header with-border">
-	  <h3 class="box-title">Por favor, atualize as informações abaixo</h3>
+	  <h3 class="box-title">Por favor, insira as informações abaixo</h3>
 	</div>
 	<!-- /.box-header -->
 	<!-- form start -->
 	<form role="form" method="POST">
+	{{ csrf_field() }}
 	  <div class="box-body">
 	    <div class="form-group">
 	      <label>Nome</label>
@@ -21,9 +22,7 @@
 	      <label>Categoria</label>
 	      <select class="form-control" name="CategoryID">
 	        <option>Selecione</option>
-	        <?php foreach($category as $categoryItem): ?>
-	        <option value="<?php echo $categoryItem->CategoryID; ?>"><?php echo $categoryItem->CategoryName; ?></option>
-	        <?php endforeach; ?>
+	        <option value=""></option>
 	      </select>
 	    </div>   
 	    <div class="form-group">

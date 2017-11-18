@@ -20,12 +20,29 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
 });
 
-Route::get('bunch', 'BunchController@index');
+
+/* Routes Category */
 Route::get('category', 'CategoryController@index');
-Route::get('company', 'CompanyController@index');
-Route::get('expense', 'ExpenseController@index');
+Route::get('category/add', 'CategoryController@add');
+Route::post('category/add', 'CategoryController@add');
+
+/* Routes Product */
 Route::get('product', 'ProductController@index');
+Route::get('product/add', 'ProductController@add');
+Route::post('product/add', 'ProductController@add');
+
+/* Routes Expense */
+Route::get('expense', 'ExpenseController@index');
+Route::get('expense/add', 'ExpenseController@add');
+Route::post('expense/add', 'ExpenseController@add');
+
+/* Routes User */
+Route::get('user', 'UserController@index');
+Route::get('user/add', 'UserController@add');
+Route::post('user/add', 'UserController@add');
+
+Route::get('bunch', 'BunchController@index');
+Route::get('company', 'CompanyController@index');
 Route::get('purchase', 'PurchaseController@index');
 Route::get('sale', 'SaleController@index');
 Route::get('supplier', 'SupplierController@index');
-Route::get('user', 'UserController@index');

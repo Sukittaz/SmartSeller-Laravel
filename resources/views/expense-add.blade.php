@@ -3,9 +3,10 @@
 @section('content')
 	<div class="box box-primary">
 		<div class="box-header with-border">
-		  <h3 class="box-title">Por favor, atualize as informações abaixo</h3>
+		  <h3 class="box-title">Por favor, insira as informações abaixo</h3>
 		</div>
 		<form role="form" method="POST" enctype="multipart/form-data">
+      	{{ csrf_field() }}
 		  <div class="box-body">
 		    <div class="row">
 		      <div class="col-md-6">

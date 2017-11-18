@@ -2,7 +2,7 @@
 
 @section('content')
 	<div style="padding-bottom: 10px;">
-	  <a style="width: 110px;" href="<?php echo BASE; ?>product/add" class="btn btn-info">
+	  <a style="width: 110px;" href="/product/add" class="btn btn-info">
 	    <i class="fa fa-plus"></i> Criar
 	  </a>  
 	</div>
@@ -25,19 +25,19 @@
 	      </tr>
 	      </thead>
 	      <tbody>
-	      <?php foreach($product as $productItem): ?>
-	      <tr>
-	        <td><?php echo $productItem->ProductName; ?></td>
-	        <td><?php echo $productItem->ProductPrice; ?></td>
-	        <td><?php echo $productItem->ProductCost; ?></td>
-	        <td><?php echo $productItem->CategoryName; ?></td>
-	        <td><?php echo $productItem->ProductCode; ?></td>
-	        <td style='width: 60px;'>
-	          <a class='fa fa-search-plus fa-2x' href="<?php echo BASE; ?>product/view/<?php echo $productItem->ProductID; ?>"/>
-	          <a class='fa fa-pencil-square fa-2x' href="<?php echo BASE; ?>product/edit/<?php echo $productItem->ProductID; ?>"/>
-	        </td>   
-	      </tr>
-	      <?php endforeach; ?>
+          @foreach ($product as $item)
+		      <tr>
+		        <td>{{ $item->ProductName }}</td>
+		        <td>{{ $item->ProductPrice }}</td>
+		        <td>{{ $item->ProductCost }}</td>
+		        <td>{{ $item->CategoryID }}</td>
+		        <td>{{ $item->ProductCode }}</td>
+		        <td>
+		          <a class='fa fa-search-plus' href=""/>
+		          <a class='fa fa-pencil-square' href=""/>
+		        </td>   
+		      </tr>
+          @endforeach
 	      </tbody>
 	    </table>
 	  </div>

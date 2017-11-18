@@ -8,6 +8,7 @@
 		<!-- /.box-header -->
 		<!-- form start -->
 		<form role="form" method="POST">
+	    {{ csrf_field() }}
 		  <div class="box-body">
 		    <div class="form-group">
 		      <label>Nome</label>
@@ -29,9 +30,7 @@
 		      <label>Grupo</label>
 		      <select class="form-control" name="BunchID">
 		        <option>Selecione</option>
-		        <?php foreach($bunch as $bunchItem): ?>
-		        <option value="<?php echo $bunchItem->BunchID; ?>"><?php echo $bunchItem->BunchName; ?></option>
-		        <?php endforeach; ?>
+		        <option value=""></option>
 		      </select>
 		    </div>                               
 		  </div>

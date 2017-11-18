@@ -1,6 +1,5 @@
 <?php 
 
-
 namespace App\Http\Controllers;
 
 use App\Models\Base\Category;
@@ -14,6 +13,21 @@ class CategoryController extends Controller {
 		$array = array('category'=>$category);
 
         return view('category-list', $array);
+    }
+
+    public function add(Request $request) {
+		if ($request->has('submit')) {
+			$categoryName = $request->input('CategoryName');
+
+			$category 				= new Category;
+			$category->CompanyID 	= 1;
+			$category->CategoryName = $categoryName;
+			$category->save();
+
+			return redirect('/category');
+		}
+
+    	return view('category-add');	
     }
 
 }

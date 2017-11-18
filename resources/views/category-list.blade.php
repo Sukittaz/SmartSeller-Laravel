@@ -2,7 +2,7 @@
 
 @section('content')
     <div style="padding-bottom: 10px;">
-      <a style="width: 110px;" href="" class="btn btn-info">
+      <a style="width: 110px;" href="/category/add" class="btn btn-info">
         <i class="fa fa-plus"></i> Criar
       </a>  
     </div>
