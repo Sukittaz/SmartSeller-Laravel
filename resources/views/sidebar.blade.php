@@ -64,7 +64,7 @@
               <ul class="treeview-menu">
                 <li><a href=""><i class="fa fa-circle-o"></i>Grupos</a></li>
                 <li><a href="/user"><i class="fa fa-circle-o"></i>Usuários</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i>Clientes</a></li>
+                <li><a href="/costumer"><i class="fa fa-circle-o"></i>Clientes</a></li>
                 <li><a href=""><i class="fa fa-circle-o"></i>Fornecedores</a></li>
               </ul>
             </li>  

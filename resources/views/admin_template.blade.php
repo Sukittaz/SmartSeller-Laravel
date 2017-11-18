@@ -21,6 +21,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
     -->
     <link href="{{ asset("/css/skins/skin-blue.css")}}" rel="stylesheet" type="text/css" />
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset("/plugins/dataTables.bootstrap.css")}}">    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -73,6 +75,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset ("/plugins/bootstrap.min.js") }}" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset ("/js/app.js") }}" type="text/javascript"></script>
+<!-- DataTables -->
+<script src="{{ asset ("/plugins/jquery.dataTables.js") }}" type="text/javascript"></script>
+<script src="{{ asset ("/plugins/dataTables.bootstrap.min.js") }}" type="text/javascript"></script>
+<!-- Global JS -->
+<script src="{{ asset ("/js/global.js") }}" type="text/javascript"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the

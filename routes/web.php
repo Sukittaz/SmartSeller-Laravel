@@ -41,6 +41,12 @@ Route::get('user', 'UserController@index');
 Route::get('user/add', 'UserController@add');
 Route::post('user/add', 'UserController@add');
 
+/* Routes Costumer */
+Route::get('costumer', 'CostumerController@index');
+Route::get('costumer/add', 'CostumerController@add');
+Route::get('costumer/add', 'CostumerController@add');
+
+
 Route::get('bunch', 'BunchController@index');
 Route::get('company', 'CompanyController@index');
 Route::get('purchase', 'PurchaseController@index');
