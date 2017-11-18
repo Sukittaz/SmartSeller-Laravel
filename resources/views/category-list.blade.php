@@ -22,13 +22,15 @@
           </tr>
           </thead>
           <tbody>
+          @foreach ($category as $item)
             <tr>
-              <td></td>
-              <td style='width: 60px;'>
-                <a class='fa fa-search-plus fa-2x' href=""/>
-                <a class='fa fa-pencil-square fa-2x' href=""/>
+              <td>{{ $item->CategoryName }}</td>
+              <td>
+                <a class='fa fa-search-plus' href=""/>
+                <a class='fa fa-pencil-square' href=""/>
               </td>   
             </tr>
+          @endforeach
           </tbody>
         </table>
       </div>
