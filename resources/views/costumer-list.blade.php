@@ -10,7 +10,7 @@
 	<div class="box">
 	  <div class="box-header">
 
-	    <h3 class="box-title">Produtos</h3>
+	    <h3 class="box-title">Clientes</h3>
 	  </div>
 	  <!-- /.box-header -->
 	  <div class="box-body">
@@ -34,9 +34,8 @@
 		        <td>{{ $item->CostumerAddres }}</td>
 		        <td>{{ $item->CostumerAddresNumber }}</td>
 		        <td>
-		          <a class='fa fa-search-plus' href=""/>
-		          <a class='fa fa-pencil-square' href=""/>
-		          <a class='fa fa-trash' href=""/>
+		          <a class='fa fa-search-plus' href="costumer/view/{{ $item->CostumerID }}" />
+		          <a class='fa fa-pencil-square' href="costumer/edit/{{ $item->CostumerID }}" />
 		        </td>   
 		      </tr>
           @endforeach

@@ -37,6 +37,36 @@ class ExpenseController extends Controller {
 		}
 
     	return view('expense-add');	
-    }    
+    }
+
+    public function view($id) {
+		$expense = Expense::find($id);
+		$array 	  = array('expense'=>$expense);
+
+        return view('expense-view', $array);
+    } 
+
+    public function edit(Request $request, $id) {
+		$expense = Expense::find($id);
+		$array 	  = array('expense'=>$expense);   
+		 	
+		if ($request->has('submit')) {
+			$expenseDate 	= $request->input('ExpenseDate');
+			$expenseRef 	= $request->input('ExpenseRef');
+			$expenseValue 	= $request->input('ExpenseValue');
+			$expenseDetail 	= $request->input('ExpenseDetail');
+
+			$expense 				= Expense::find($id);
+			$expense->ExpenseDate 	= $expenseDate;
+			$expense->ExpenseRef 	= $expenseRef;
+			$expense->ExpenseValue 	= $expenseValue;
+			$expense->ExpenseDetail = $expenseDetail;
+			$expense->update();
+
+			return redirect('/expense');
+		}       
+
+    	return view('expense-edit', $array);	
+	}        
 
 }

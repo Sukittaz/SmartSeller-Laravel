@@ -28,11 +28,10 @@
 	      <tr>
 	        <td>{{ $item->UserName }}</td>
 	        <td>{{ $item->UserEmail }}</td>
-	        <td>{{ $item->BunchID }}</td>
+	        <td>{{ $item->bunch->BunchName }}</td>
 	        <td>
-	          <a class='fa fa-search-plus' href=""/>
-	          <a class='fa fa-pencil-square' href=""/>
-	          <a class='fa fa-trash' href=""/>
+	          <a class='fa fa-search-plus' href="user/view/{{ $item->UserID }}"/>
+	          <a class='fa fa-pencil-square' href="user/edit/{{ $item->UserID }}"/>
 	        </td>   
 	      </tr>
 	      @endforeach

@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 class ProductController extends Controller {
 
     public function index() {
-		// $product = Product::all();
 		$product = Product::with('category')->get();
 		$array   = array('product'=>$product);
 
@@ -47,6 +46,45 @@ class ProductController extends Controller {
 		}
 
     	return view('product-add');	
+    }
+
+    public function view($id) {
+		$product = Product::with('category')->find($id);
+		$array   = array('product'=>$product);
+
+        return view('product-view', $array);
     }    
 
+    public function edit(Request $request, $id) {
+		$product = Product::find($id);
+		$array 	 = array('product'=>$product);   
+		 	
+		if ($request->has('submit')) {
+			$productName 	 = $request->input('ProductName');
+			$productCode 	 = $request->input('ProductCode');
+			$productTypeCalc = $request->input('ProductTypeCalc');
+			$productCost 	 = $request->input('ProductCost');
+			$productPrice 	 = $request->input('ProductPrice');
+			$productQtd 	 = $request->input('ProductQtd');
+			$productAlert 	 = $request->input('ProductAlert');
+			$productDetail 	 = $request->input('ProductDetail');
+
+			$product 				  = Product::find($id);
+			$product->ProductName 	  = $productName;
+			$product->ProductCode 	  = $productCode;
+			$product->ProductTypeCalc = $productTypeCalc;
+			$product->ProductCost 	  = $productCost;
+			$product->ProductPrice 	  = $productPrice;
+			$product->ProductPrice 	  = $productPrice;
+			$product->ProductQtd 	  = $productQtd;
+			$product->ProductAlert 	  = $productAlert;
+			$product->ProductDetail   = $productDetail;
+
+			$product->update();
+
+			return redirect('/product');
+		}       
+
+    	return view('product-edit', $array);	
+	}       
 }

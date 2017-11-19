@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller {
 
     public function index() {
-		$user  = User::all();
+		$user  = User::with('bunch')->get();
 		$array = array('user'=>$user);
 
         return view('user-list', $array);
@@ -38,5 +38,35 @@ class UserController extends Controller {
 
     	return view('user-add');	
     }
+
+    public function view($id) {
+		$user 	= User::with('bunch')->find($id);
+		$array 	= array('user'=>$user);
+
+        return view('user-view', $array);
+    } 
+
+    public function edit(Request $request, $id) {
+		$user = User::find($id);
+		$array 	  = array('user'=>$user);   
+
+		if ($request->has('submit')) {
+			$userName 	= $request->input('UserName');
+			$userLogin 	= $request->input('UserLogin');
+			$userEmail 	= $request->input('UserEmail');
+			$userPass 	= $request->input('UserPass');
+
+			$user 				= User::find($id);
+			$user->UserName 	= $userName;
+			$user->UserLogin 	= $userLogin;
+			$user->UserEmail 	= $userEmail;
+			$user->UserPass 	= md5($userPass);
+			$user->update();
+
+			return redirect('/user');
+		}       
+
+    	return view('user-edit', $array);	
+	}      
 
 }

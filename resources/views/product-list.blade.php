@@ -33,8 +33,8 @@
 		        <td>{{ $item->category->CategoryName }}</td>
 		        <td>{{ $item->ProductCode }}</td>
 		        <td>
-		          <a class='fa fa-search-plus' href=""/>
-		          <a class='fa fa-pencil-square' href=""/>
+		          <a class='fa fa-search-plus' href="product/view/{{ $item->ProductID }}"/>
+		          <a class='fa fa-pencil-square' href="product/edit/{{ $item->ProductID }}"/>
 		        </td>   
 		      </tr>
           @endforeach

@@ -29,10 +29,9 @@
 		        <td>{{ $item->ExpenseRef }}</td>
 		        <td>{{ $item->ExpenseDate }}</td>
 		        <td>{{ $item->ExpenseValue }}</td>
-		        <td style='width: 80px;'>
-		          <a class='fa fa-search-plus' href=""/>
-		          <a class='fa fa-pencil-square' href=""/>
-		          <a class='fa fa-trash' href=""/>
+		        <td>
+		          <a class='fa fa-search-plus' href="expense/view/{{ $item->ExpenseID }}" />
+		          <a class='fa fa-pencil-square' href="expense/edit/{{ $item->ExpenseID }}" />
 		        </td>   
 		      </tr>
           @endforeach

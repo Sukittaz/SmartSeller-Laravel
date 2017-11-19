@@ -26,8 +26,8 @@
             <tr>
               <td>{{ $item->CategoryName }}</td>
               <td>
-                <a class='fa fa-search-plus' href=""/>
-                <a class='fa fa-pencil-square' href=""/>
+                <a class='fa fa-search-plus' href="category/view/{{ $item->CategoryID }}" />
+                <a class='fa fa-pencil-square' href="category/edit/{{ $item->CategoryID }}"/>
               </td>   
             </tr>
           @endforeach

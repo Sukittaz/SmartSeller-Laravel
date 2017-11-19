@@ -32,9 +32,8 @@
 		        <td>{{ $item->SupplierPhone }}</td>
 		        <td>{{ $item->SupplierCNPJ }}</td>
 		        <td>
-		          <a class='fa fa-search-plus' href=""/>
-		          <a class='fa fa-pencil-square' href=""/>
-		          <a class='fa fa-trash' href=""/>
+		          <a class='fa fa-search-plus' href="supplier/view/{{ $item->SupplierID }}"/>
+		          <a class='fa fa-pencil-square' href="supplier/edit/{{ $item->SupplierID }}"/>
 		        </td>   
 		      </tr>
 	      @endforeach
