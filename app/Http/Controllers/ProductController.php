@@ -3,10 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Base\Product;
+use App\Models\User;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller {
+
+	public function __construct() {
+		$user = new User;
+        $user->isLogged();
+   //      if( == false) {
+			// return redirect('/login');
+   //      	exit;
+   //      }
+	}
 
     public function index() {
 		$product = Product::with('category')->get();

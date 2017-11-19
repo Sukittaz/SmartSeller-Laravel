@@ -21,6 +21,11 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
+/* Routes Login */
+Route::get('login', 'LoginController@index');
+Route::post('login', 'LoginController@index');
+
+
 /* Routes Category */
 Route::get('category', 'CategoryController@index');
 Route::get('category/add', 'CategoryController@add');
