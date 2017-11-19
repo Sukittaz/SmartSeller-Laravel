@@ -1,13 +1,27 @@
 /* Data-Table */
 $(function () {
 	$('#data-table').DataTable({
+	    "oLanguage": {
+	    "sLengthMenu": "Mostrar _MENU_ registros por página",
+	    "sZeroRecords": "Nenhum registro encontrado",
+	    "sInfo": "Mostrando _START_ / _END_ de _TOTAL_ registro(s)",
+	    "sInfoEmpty": "Mostrando 0 / 0 de 0 registros",
+	    "sInfoFiltered": "(filtrado de _MAX_ registros)",
+	    "sSearch": "Pesquisar: ",
+		    "oPaginate": {
+		        "sFirst": "Início",
+		        "sPrevious": "Anterior",
+		        "sNext": "Próximo",
+		        "sLast": "Último"
+		    }
+	   },
 	  'paging'      : true,
-	  'lengthChange': false,
-	  'pageLength'  : 15,
+	  'lengthChange': true,
+	  'pageLength'  : 20,
 	  'searching'   : true,
 	  'ordering'    : true,
 	  'info'        : true,
-	  'autoWidth'   : false
+	  'autoWidth'   : true
 	})
 })
 
