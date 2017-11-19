@@ -30,7 +30,7 @@
 		        <td>{{ $item->ProductName }}</td>
 		        <td>{{ $item->ProductPrice }}</td>
 		        <td>{{ $item->ProductCost }}</td>
-		        <td>{{ $item->CategoryID }}</td>
+		        <td>{{ $item->category->CategoryName }}</td>
 		        <td>{{ $item->ProductCode }}</td>
 		        <td>
 		          <a class='fa fa-search-plus' href=""/>

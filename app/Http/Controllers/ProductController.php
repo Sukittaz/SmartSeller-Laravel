@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class ProductController extends Controller {
 
     public function index() {
-		$product = Product::all();
+		// $product = Product::all();
+		$product = Product::with('category')->get();
 		$array   = array('product'=>$product);
 
         return view('product-list', $array);
