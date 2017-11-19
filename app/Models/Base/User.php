@@ -8,6 +8,7 @@
 namespace App\Models\Base;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
+use Session;
 
 /**
  * Class User
@@ -47,4 +48,30 @@ class User extends Eloquent
 	{
 		return $this->belongsTo(\App\Models\Company::class, 'CompanyID');
 	}
+
+	public function doLogin($userLogin, $userPass){
+		$user = User::select('UserID', 'CompanyID', 'UserName')
+				  ->where('UserLogin', '=', $userLogin)
+				  ->where('UserPass', '=', md5($userPass))->get();
+
+		if (count($user)) {
+			$data = array('UserID' =>  $user[0]->UserID,
+						  'CompanyID' =>  $user[0]->CompanyID,
+						  'UserName' =>  $user[0]->UserName,);
+		
+			session()->put('user', $data); 
+
+			return true;
+		}else{
+			return false;
+		}				  
+	}
+
+	public function isLogged() {
+		if(session()->has('user') == true) {
+			return true;
+		} else {
+			return false;
+		}
+	}		
 }
