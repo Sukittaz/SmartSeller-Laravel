@@ -25,7 +25,7 @@ class UserController extends Controller {
 		$user  = User::with('bunch')->where('CompanyID', '=', $this->CompanyID)->get();
 		$array = array('user'=>$user);
 
-        return view('user-list', $array);
+        return view('user/user-list', $array);
     }
 
     public function add(Request $request) {
@@ -48,14 +48,14 @@ class UserController extends Controller {
 			return redirect('/user');
 		}
 
-    	return view('user-add');	
+    	return view('user/user-add');	
     }
 
     public function view($id) {
 		$user 	= User::with('bunch')->find($id);
 		$array 	= array('user'=>$user);
 
-        return view('user-view', $array);
+        return view('user/user-view', $array);
     } 
 
     public function edit(Request $request, $id) {
@@ -78,7 +78,7 @@ class UserController extends Controller {
 			return redirect('/user');
 		}       
 
-    	return view('user-edit', $array);	
+    	return view('user/user-edit', $array);	
 	}      
 
 }

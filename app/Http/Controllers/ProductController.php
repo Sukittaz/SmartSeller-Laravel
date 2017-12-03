@@ -26,7 +26,7 @@ class ProductController extends Controller {
 		$product = Product::with('category')->where('CompanyID', '=', $this->CompanyID)->get();
 		$array   = array('product'=>$product);
 
-        return view('product-list', $array);
+        return view('product/product-list', $array);
     }
 
     public function add(Request $request) {
@@ -63,14 +63,14 @@ class ProductController extends Controller {
 			return redirect('/product');
 		}
 
-    	return view('product-add', $array);	
+    	return view('product/product-add', $array);	
     }
 
     public function view($id) {
 		$product = Product::with('category')->find($id);
 		$array   = array('product'=>$product);
 
-        return view('product-view', $array);
+        return view('product/product-view', $array);
     }    
 
     public function edit(Request $request, $id) {
@@ -103,6 +103,6 @@ class ProductController extends Controller {
 			return redirect('/product');
 		}       
 
-    	return view('product-edit', $array);	
+    	return view('product/product-edit', $array);	
 	}       
 }

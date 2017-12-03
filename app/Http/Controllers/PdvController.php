@@ -22,6 +22,6 @@ class PdvController extends Controller {
 
     public function index() {
 
-        return view('pdv');
+        return view('pdv/pdv');
     }
 }

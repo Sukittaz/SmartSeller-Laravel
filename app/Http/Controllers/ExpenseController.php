@@ -26,7 +26,7 @@ class ExpenseController extends Controller {
 		$expense = Expense::where('CompanyID', '=', $this->CompanyID)->get();
 		$array = array('expense'=>$expense);
 
-        return view('expense-list', $array);
+        return view('expense/expense-list', $array);
     }
 
     public function add(Request $request) {
@@ -49,7 +49,7 @@ class ExpenseController extends Controller {
 			return redirect('/expense');
 		}
 
-    	return view('expense-add');	
+    	return view('expense/expense-add');	
     }
 
     public function view($id) {
@@ -79,7 +79,7 @@ class ExpenseController extends Controller {
 			return redirect('/expense');
 		}       
 
-    	return view('expense-edit', $array);	
+    	return view('expense/expense-edit', $array);	
 	}        
 
 }

@@ -23,7 +23,7 @@ class SaleController extends Controller {
 
     public function index() {
 
-        return view('sale-list');
+        return view('sale/sale-list');
     }
 
 }

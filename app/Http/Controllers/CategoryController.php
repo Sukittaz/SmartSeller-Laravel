@@ -26,7 +26,7 @@ class CategoryController extends Controller {
 
 		$array = array('category'=>$category);
 
-        return view('category-list', $array);
+        return view('category/category-list', $array);
     }
 
     public function add(Request $request) {
@@ -41,14 +41,14 @@ class CategoryController extends Controller {
 			return redirect('/category');
 		}
 
-    	return view('category-add');	
+    	return view('category/category-add');	
     }
 
     public function view($id) {
 		$category = Category::find($id);
 		$array 	  = array('category'=>$category);
 
-        return view('category-view', $array);
+        return view('category/category-view', $array);
     } 
 
     public function edit(Request $request, $id) {
@@ -65,6 +65,6 @@ class CategoryController extends Controller {
 			return redirect('/category');
 		}       
 
-    	return view('category-edit', $array);	
+    	return view('category/category-edit', $array);	
 	}
 }

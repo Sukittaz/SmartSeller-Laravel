@@ -22,7 +22,7 @@ class LoginController extends Controller {
 			}
 		}
 
-        return view('login');
+        return view('login/login');
     }
 
     public function logout() {
