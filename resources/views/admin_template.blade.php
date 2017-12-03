@@ -16,6 +16,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="{{ asset("/css/adminlte-app.css")}}" rel="stylesheet" type="text/css" />
+    <!-- Global JS -->
+    <link href="{{ asset("/css/global.css")}}" rel="stylesheet" type="text/css" />
+
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
@@ -23,6 +26,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="{{ asset("/css/skins/skin-blue.css")}}" rel="stylesheet" type="text/css" />
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset("/plugins/dataTables.bootstrap.css")}}">    
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ asset("/plugins/select2.min.css")}}">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,6 +84,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- DataTables -->
 <script src="{{ asset ("/plugins/jquery.dataTables.js") }}" type="text/javascript"></script>
 <script src="{{ asset ("/plugins/dataTables.bootstrap.min.js") }}" type="text/javascript"></script>
+<!-- Select2 -->
+<script src="{{ asset("/plugins/select2.min.js") }}" type="text/javascript"></script>
 <!-- Global JS -->
 <script src="{{ asset ("/js/global.js") }}" type="text/javascript"></script>
 

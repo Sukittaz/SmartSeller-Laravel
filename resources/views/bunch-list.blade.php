@@ -2,7 +2,7 @@
 
 @section('content')
 	<div style="padding-bottom: 10px;">
-	  <a style="width: 110px;" href="<?php echo BASE; ?>bunch/add" class="btn btn-info">
+	  <a style="width: 110px;" href="bunch/add" class="btn btn-info">
 	    <i class="fa fa-plus"></i> Criar
 	  </a>  
 	</div>
@@ -22,15 +22,15 @@
 	      </tr>
 	      </thead>
 	      <tbody>
-	      <?php foreach($bunch as $bunchItem): ?>
-	      <tr>
-	        <td><?php echo $bunchItem->BunchName; ?></td>
-	        <td style='width: 60px;'>
-	          <a class='fa fa-search-plus fa-2x' href="<?php echo BASE; ?>bunch/view/<?php echo $bunchItem->BunchID; ?>"/>
-	          <a class='fa fa-pencil-square fa-2x' href="<?php echo BASE; ?>bunch/edit/<?php echo $bunchItem->BunchID; ?>"/>
-	        </td>   
-	      </tr>
-	      <?php endforeach; ?>
+          @foreach ($bunch as $item)
+		      <tr>
+		        <td>{{ $item->BunchName }}</td>
+		        <td>
+		          <a class='fa fa-search-plus ' href="bunch/view/{{ $item->BunchID }}"/>
+		          <a class='fa fa-pencil-square' href="bunch/edit/{{ $item->BunchID }}"/>
+		        </td>   
+		      </tr>
+          @endforeach
 	      </tbody>
 	    </table>
 	  </div>

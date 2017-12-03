@@ -2,7 +2,7 @@
 
 @section('content')
 	<div style="padding-bottom: 10px;">
-	  <a style="width: 110px;" href="<?php echo BASE; ?>purchase/add" class="btn btn-info">
+	  <a style="width: 110px;" href="purchase/add" class="btn btn-info">
 	    <i class="fa fa-plus"></i> Criar
 	  </a>  
 	</div>
@@ -25,19 +25,17 @@
 	      </tr>
 	      </thead>
 	      <tbody>
-	      <?php if(isset($purchase)): ?>
-	        <?php foreach($purchase as $purchaseItem): ?>
-	        <tr>
-	          <td><?php echo $purchaseItem['PurchaseRef']; ?></td>
-	          <td><?php echo $purchaseItem['PurchaseData']; ?></td>
-	          <td><?php echo $purchaseItem['SupplierName']; ?></td>
-	          <td><?php echo ($purchaseItem['PurchaseStatus'] == 1) ? 'Recebido' : 'Não Recebido'; ?></td>
-	          <td style='width: 20px;'>
-	            <a class='fa fa-search-plus fa-2x' href="<?php echo BASE; ?>purchase/view/<?php echo $purchaseItem['PurchaseID']; ?>"/>
-	          </td>   
-	        </tr>
-	        <?php endforeach; ?>
-	      <?php endif; ?>
+          @foreach ($purchase as $item)
+			<tr>
+			  <td>{{ $item->PurchaseRef }}</td>
+			  <td>{{ $item->PurchaseData }}</td>
+			  <td>{{ $item->supplier->SupplierName }}</td>
+			  <td>{{ ($item->PurchaseStatus == 1)? "Recebido" : "Não Recebido" }}</td>
+			  <td>
+			    <a class='fa fa-search-plus' href="purchase/view/"/>
+			  </td>   
+			</tr>
+          @endforeach
 	      </tbody>
 	    </table>
 	  </div>

@@ -10,7 +10,11 @@ use Illuminate\Routing\Redirector;
 
 class CostumerController extends Controller {
 
+	private $CompanyID;
+
 	public function __construct(Redirector $redirect) {
+		$this->CompanyID = session()->get('user')['CompanyID'];
+		
 		$user = new User;
         if($user->isLogged() == false) {
 			$redirect->to('login')->send();
@@ -18,7 +22,7 @@ class CostumerController extends Controller {
 	}		
 
     public function index() {
-		$costumer = Costumer::all();
+		$costumer = Costumer::where('CompanyID', '=', $this->CompanyID)->get();
 		$array = array('costumer'=>$costumer);
 
         return view('costumer-list', $array);
@@ -40,7 +44,7 @@ class CostumerController extends Controller {
 			$costumerDetail 	  = $request->input('CostumerDetail');
 
 			$costumer 						= new Costumer;
-			$costumer->CompanyID 			= 1;
+			$costumer->CompanyID 			= $this->CompanyID;
 			$costumer->CostumerName 		= $costumerName;
 			$costumer->CostumerCPF 			= $costumerCPF;
 			$costumer->CostumerEmail 		= $costumerEmail;

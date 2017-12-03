@@ -24,7 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
 /* Routes Login */
 Route::get('login', 'LoginController@index');
 Route::post('login', 'LoginController@index');
-
+Route::get('login/logout', 'LoginController@logout');
 
 /* Routes Category */
 Route::get('category', 'CategoryController@index');
@@ -79,6 +79,17 @@ Route::get('company', 'CompanyController@index');
 Route::get('company/edit/{id}', 'CompanyController@edit');
 Route::post('company/edit/{id}', 'CompanyController@edit');
 
-Route::get('bunch', 'BunchController@index');
+/* Routes Purchase */
 Route::get('purchase', 'PurchaseController@index');
+Route::get('purchase/add', 'PurchaseController@add');
+Route::post('purchase/add', 'PurchaseController@add');
+
+/* Routes Bunch */
+Route::get('bunch', 'BunchController@index');
+Route::get('bunch/add', 'BunchController@add');
+Route::post('bunch/add', 'BunchController@add');
+Route::get('bunch/edit/{id}', 'BunchController@edit');
+Route::post('bunch/edit/{id}', 'BunchController@edit');
+
+
 Route::get('sale', 'SaleController@index');

@@ -10,7 +10,11 @@ use Illuminate\Routing\Redirector;
 
 class UserController extends Controller {
 
+	private $CompanyID;
+
 	public function __construct(Redirector $redirect) {
+		$this->CompanyID = session()->get('user')['CompanyID'];
+
 		$user = new User;
         if($user->isLogged() == false) {
             $redirect->to('login')->send();
@@ -18,7 +22,7 @@ class UserController extends Controller {
 	}
 
     public function index() {
-		$user  = User::with('bunch')->get();
+		$user  = User::with('bunch')->where('CompanyID', '=', $this->CompanyID)->get();
 		$array = array('user'=>$user);
 
         return view('user-list', $array);

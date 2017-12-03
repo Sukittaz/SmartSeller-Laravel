@@ -10,7 +10,11 @@ use Illuminate\Routing\Redirector;
 
 class SaleController extends Controller {
 
+	private $CompanyID;
+
 	public function __construct(Redirector $redirect) {
+		$this->CompanyID = session()->get('user')['CompanyID'];
+		
 		$user = new User;
         if($user->isLogged() == false) {
             $redirect->to('login')->send();

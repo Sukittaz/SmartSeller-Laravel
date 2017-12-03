@@ -61,9 +61,7 @@
 	          <label>Fornecedor</label>
 	          <select class="form-control" name="SupplierID">
 	            <option>Selecione</option>
-	            <?php foreach($supplier as $supplierItem): ?>
-	            <option value="<?php echo $supplierItem->SupplierID; ?>"><?php echo $supplierItem->SupplierName; ?></option>
-	            <?php endforeach; ?>
+	            <option value=""></option>
 	          </select>
 	        </div>  
 	      </div>

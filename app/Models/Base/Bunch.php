@@ -8,6 +8,7 @@
 namespace App\Models\Base;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Bunch
@@ -27,6 +28,11 @@ class Bunch extends Eloquent
 	protected $table = 'bunch';
 	protected $primaryKey = 'BunchID';
 	public $timestamps = false;
+	private $BunchID;
+
+	public function setBunchID($BunchID){
+		$this->BunchID = $BunchID;
+	}
 
 	protected $casts = [
 		'CompanyID' => 'int'
@@ -46,5 +52,16 @@ class Bunch extends Eloquent
 	public function users()
 	{
 		return $this->hasMany(\App\Models\User::class, 'BunchID');
+	}
+
+	public function getPermissions($id) 
+	{
+        $bunchPermission = DB::table('bunch')
+		                ->leftJoin('bunch_permissions', 'bunch.BunchID', '=', 'bunch_permissions.BunchID')
+		                ->leftJoin('permission', 'permission.PermissionID', '=', 'bunch_permissions.PermissionID')
+		                ->where('bunch.BunchID', '=', $this->BunchID)
+		                ->get();  		
+
+		return $bunchPermission;
 	}
 }

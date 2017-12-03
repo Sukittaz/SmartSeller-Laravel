@@ -11,7 +11,11 @@ use Illuminate\Routing\Redirector;
 
 class SupplierController extends Controller {
 
+	private $CompanyID;
+
 	public function __construct(Redirector $redirect) {
+		$this->CompanyID = session()->get('user')['CompanyID'];
+		
 		$user = new User;
         if($user->isLogged() == false) {
             $redirect->to('login')->send();
@@ -19,7 +23,7 @@ class SupplierController extends Controller {
 	}	
 
     public function index() {
-		$supplier = Supplier::all();
+		$supplier = Supplier::where('CompanyID', '=', $this->CompanyID)->get();
 		$array = array('supplier'=>$supplier);
 
         return view('supplier-list', $array);
@@ -34,7 +38,7 @@ class SupplierController extends Controller {
 			$supplierDetail = $request->input('SupplierDetail');
 
 			$supplier 				  = new Supplier;
-			$supplier->CompanyID 	  = 1;
+			$supplier->CompanyID 	  = $this->CompanyID;
 			$supplier->SupplierName   = $supplierName;
 			$supplier->SupplierEmail  = $supplierEmail;
 			$supplier->SupplierPhone  = $supplierPhone;

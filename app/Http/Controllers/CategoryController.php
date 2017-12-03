@@ -10,7 +10,11 @@ use Illuminate\Routing\Redirector;
 
 class CategoryController extends Controller {
 
+	private $CompanyID;
+
 	public function __construct(Redirector $redirect) {
+		$this->CompanyID = session()->get('user')['CompanyID'];
+
 		$user = new User;
         if($user->isLogged() == false) {
 			$redirect->to('login')->send();
@@ -18,7 +22,8 @@ class CategoryController extends Controller {
 	}	
 
     public function index() {
-		$category = Category::all();
+		$category = Category::where('CompanyID', '=', $this->CompanyID)->get();
+
 		$array = array('category'=>$category);
 
         return view('category-list', $array);
@@ -29,7 +34,7 @@ class CategoryController extends Controller {
 			$categoryName = $request->input('CategoryName');
 
 			$category 				= new Category;
-			$category->CompanyID 	= 1;
+			$category->CompanyID 	= $this->CompanyID;
 			$category->CategoryName = $categoryName;
 			$category->save();
 

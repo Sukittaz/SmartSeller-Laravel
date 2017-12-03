@@ -10,7 +10,11 @@ use Illuminate\Routing\Redirector;
 
 class ProductController extends Controller {
 
+	private $CompanyID;
+
 	public function __construct(Redirector $redirect) {
+		$this->CompanyID = session()->get('user')['CompanyID'];
+		
 		$user = new User;
         if($user->isLogged() == false) {
 			$redirect->to('login')->send();
@@ -18,14 +22,13 @@ class ProductController extends Controller {
 	}
 
     public function index() {
-		$product = Product::with('category')->get();
+		$product = Product::with('category')->where('CompanyID', '=', $this->CompanyID)->get();
 		$array   = array('product'=>$product);
 
         return view('product-list', $array);
     }
 
     public function add(Request $request) {
-
 
 		if ($request->has('submit')) {
 			$productName 	 = $request->input('ProductName');
@@ -39,7 +42,7 @@ class ProductController extends Controller {
 			$productDetail 	 = $request->input('ProductDetail');
 
 			$product 				  = new Product;
-			$product->CompanyID 	  = 1;
+			$product->CompanyID 	  = $this->CompanyID;
 			$product->ProductName 	  = $productName;
 			$product->ProductCode 	  = $productCode;
 			$product->CategoryID 	  = $categoryID;

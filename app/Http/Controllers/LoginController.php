@@ -25,4 +25,10 @@ class LoginController extends Controller {
         return view('login');
     }
 
+    public function logout() {
+    	session()->flush();
+
+		return redirect('/login');
+    }
+
 }

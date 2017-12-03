@@ -8,6 +8,7 @@
 		<!-- /.box-header -->
 		<!-- form start -->
 		<form role="form" method="POST">
+      	{{ csrf_field() }}
 		  <div class="box-body">
 		    <div class="form-group">
 		      <label>Nome</label>
@@ -15,11 +16,10 @@
 		    </div>
 		    <div class="form-group">
 		      <label>Permissões</label>
-		      <select class="form-control select2" name="PermissionID[]" multiple="multiple" data-placeholder="Selecione as permissões"
-		              style="width: 100%;">
-		        <?php foreach($permission as $permissionItem): ?>      
-		        <option value="<?php echo $permissionItem->PermissionID; ?>"><?php echo $permissionItem->PermissionName; ?></option>
-		        <?php endforeach; ?>
+		      <select class="form-control select2" name="PermissionID[]" multiple="multiple" data-placeholder="Selecione as permissões" style="width: 100%;">
+          		@foreach ($permission as $item)
+			        <option value="{{ $item->PermissionID }}">{{ $item->PermissionName }}</option>
+         		@endforeach
 		      </select>
 		    </div>              
 		  </div>

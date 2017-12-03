@@ -11,7 +11,11 @@ use Illuminate\Routing\Redirector;
 
 class ExpenseController extends Controller {
 
+	private $CompanyID;
+
 	public function __construct(Redirector $redirect) {
+		$this->CompanyID = session()->get('user')['CompanyID'];
+		
 		$user = new User;
         if($user->isLogged() == false) {
 			$redirect->to('login')->send();
@@ -19,7 +23,7 @@ class ExpenseController extends Controller {
 	}	
 
     public function index() {
-		$expense = Expense::all();
+		$expense = Expense::where('CompanyID', '=', $this->CompanyID)->get();
 		$array = array('expense'=>$expense);
 
         return view('expense-list', $array);
@@ -34,7 +38,7 @@ class ExpenseController extends Controller {
 			$expenseDetail 	= $request->input('ExpenseDetail');
 
 			$expense 				= new Expense;
-			$expense->CompanyID 	= 1;
+			$expense->CompanyID 	= $this->CompanyID;
 			$expense->ExpenseDate 	= $expenseDate;
 			$expense->ExpenseRef 	= $expenseRef;
 			$expense->ExpenseValue 	= $expenseValue;
