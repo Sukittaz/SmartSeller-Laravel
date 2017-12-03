@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Base\Category;
 use App\Models\Base\Product;
 use App\Models\Base\User;
 use App\Http\Requests;
@@ -29,11 +30,14 @@ class ProductController extends Controller {
     }
 
     public function add(Request $request) {
+		$category = Category::where('CompanyID', '=', $this->CompanyID)->get();
+
+		$array = array('category'=>$category);
 
 		if ($request->has('submit')) {
 			$productName 	 = $request->input('ProductName');
 			$productCode 	 = $request->input('ProductCode');
-			$categoryID 	 = 3;
+			$categoryID 	 = $request->input('CategoryID');
 			$productTypeCalc = $request->input('ProductTypeCalc');
 			$productCost 	 = $request->input('ProductCost');
 			$productPrice 	 = $request->input('ProductPrice');
@@ -59,7 +63,7 @@ class ProductController extends Controller {
 			return redirect('/product');
 		}
 
-    	return view('product-add');	
+    	return view('product-add', $array);	
     }
 
     public function view($id) {

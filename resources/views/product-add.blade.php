@@ -22,7 +22,9 @@
 	      <label>Categoria</label>
 	      <select class="form-control" name="CategoryID">
 	        <option>Selecione</option>
-	        <option value=""></option>
+	      	@foreach ($category as $item)
+	        <option value="{{ $item->CategoryID }}">{{ $item->CategoryName }}</option>
+	        @endforeach
 	      </select>
 	    </div>   
 	    <div class="form-group">
