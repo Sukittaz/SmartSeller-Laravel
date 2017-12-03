@@ -19,7 +19,7 @@
 				      <label>Permissões</label>
 				      <select class="form-control select2" name="PermissionID[]" multiple="multiple" data-placeholder="Selecione as permissões" style="width: 100%;">
     						@foreach ($item['Permissions'] as $item2)
-				            	<option value="{{ $item2['PermissionID'] }}" {{ isset($item2['Selected']) AND $item2['PermissionName'] != ''? 'selected="selected"':'' }} >{{ $item2['PermissionName'] }}</option>
+				            	<option value="{{ $item2['PermissionID'] }}" {{ isset($item2['Selected'])? 'selected="selected"':'' }} >{{ $item2['PermissionName'] }}</option>
 							@endforeach
 				      </select>
 				    </div>              
