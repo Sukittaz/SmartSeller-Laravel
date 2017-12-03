@@ -201,6 +201,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- Modals Includes -->
 
 	<!-- PDV JS -->
 	<script src="{{ asset ("/js/pdv.js") }}" type="text/javascript"></script>	
