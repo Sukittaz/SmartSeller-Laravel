@@ -91,5 +91,8 @@ Route::post('bunch/add', 'BunchController@add');
 Route::get('bunch/edit/{id}', 'BunchController@edit');
 Route::post('bunch/edit/{id}', 'BunchController@edit');
 
+/* Routes PDV */
+Route::get('pdv', 'PdvController@index');
+
 
 Route::get('sale', 'SaleController@index');
