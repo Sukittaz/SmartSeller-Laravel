@@ -18,7 +18,7 @@
 <body class="skin-blue" >
 	<header class="main-header">
 	    <!-- Logo -->
-	    <a href="index2.html" class="logo"><b>Admin</b>LTE</a>
+	    <a href="/product" class="logo"><b>Admin</b>LTE</a>
 	    <!-- Header Navbar -->
 	    <nav class="navbar navbar-static-top" role="navigation">
 	        <div class="navbar-custom-menu">
@@ -34,17 +34,17 @@
 	</header>
 	<div class="container-fluid">
 		<div class="row row-one text-center line-space">
-		  	<div class="col-md-3">
-		  		<p>Vendedor(F11)</p>
+		  	<div class="col-md-1">
+		  		<p>Caixa:</p>
 		  	</div>		  	
 		  	<div class="col-md-3">
-		  		<p>Cliente(F545)</p>
+		  		<p>Usuário:</p>
 		  	</div>		  	
 		  	<div class="col-md-3">
-		  		<p>Cliente(F545)</p>
+		  		<p>Vendedor(F1):</p>
 		  	</div>
 		  	<div class="col-md-3">
-		  		<p>Cliente(F545)</p>
+		  		<p>Cliente(F2):</p>
 		  	</div>		  	
 		</div>
 		<div class="row row-two line-space">
@@ -53,51 +53,51 @@
 		<div class="row row-three line-space-min">
 		  	<div class="col-md-4">
 			    <div class="form-group">
-			      <label>Nome:</label>
+			      <label>Código Produto:</label>
 			      <input type="text" name="ProductCode" class="form-control">
 			    </div>
 		  		<div class="row">
 				    <div class="form-group">
 					    <div class="col-md-3">
-					    	<label>Nome:</label>
+					    	<label>Qtde:</label>
 					    </div>
 					    <div class="col-md-6">
-					    	<input type="text" name="ProductCode" class="form-control">
+					    	<input type="text" name="ProductQtd" class="form-control">
 	       				</div>
 				    </div>		  			
 		  		</div>
 		  		<div class="row line-space-min">
 				    <div class="form-group">
 					    <div class="col-md-3">
-					    	<label>Nome:</label>
+					    	<label>Vlr Unit:</label>
 					    </div>
 					    <div class="col-md-6">
-					    	<input type="text" name="ProductCode" class="form-control">
+					    	<input type="text" name="VlrUnit" class="form-control">
 	       				</div>
 				    </div>		  			
 		  		</div>
 		  		<div class="row line-space-min">
 				    <div class="form-group">
 					    <div class="col-md-3">
-					    	<label>Nome:</label>
+					    	<label>Vlr Total:</label>
 					    </div>
 					    <div class="col-md-6">
-					    	<input type="text" name="ProductCode" class="form-control">
+					    	<input type="text" name="VlrTotal" class="form-control">
 	       				</div>
 				    </div>		  			
 		  		</div>
 		  		<div class="row line-space-min">
 				    <div class="form-group">
 					    <div class="col-md-3">
-					    	<label>Nome:</label>
+					    	<label>Estoque:</label>
 					    </div>
 					    <div class="col-md-6">
-					    	<input type="text" name="ProductCode" class="form-control">
+					    	<input type="text" name="ProductEstoque" class="form-control" readonly="readonly">
 	       				</div>
 				    </div>		  			
 		  		</div>
-		  		<div class="col-md-9">
-		  			<div class="row shortcuts line-space-min">
+		  		<div class="col-md-9 line-space-min">
+		  			<div class="row shortcuts">
 		  				<ul>
 		  					<li>(F11) Finalizar Venda</li>
 		  					<li>(F11) Finalizar Venda</li>
@@ -201,9 +201,15 @@
 			</div>
 		</div>
 	</div>
-	<!-- Modals Includes -->
-
+	<!-- JQuery -->
+	<script src="{{ asset ("/plugins/jQuery-2.2.3.min.js") }}"></script>
+	<!-- Bootstrap 3.3.2 JS -->
+	<script src="{{ asset ("/plugins/bootstrap.min.js") }}" type="text/javascript"></script>	
 	<!-- PDV JS -->
 	<script src="{{ asset ("/js/pdv.js") }}" type="text/javascript"></script>	
+	<!-- Modals Includes -->
+	@include('modal/modal-costumer')
+	@include('modal/modal-employer')
+	@include('modal/modal-product')
 </body>
 </html>

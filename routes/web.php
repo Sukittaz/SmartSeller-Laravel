@@ -94,5 +94,12 @@ Route::post('bunch/edit/{id}', 'BunchController@edit');
 /* Routes PDV */
 Route::get('pdv', 'PdvController@index');
 
+/* Ajax */
+Route::get('ajax/searchProduct', 'AjaxController@searchProduct');
+Route::get('ajax/searchCostumer', 'AjaxController@searchCostumer');
+Route::get('ajax/searchEmployer', 'AjaxController@searchEmployer');
+
+
+
 
 Route::get('sale', 'SaleController@index');
