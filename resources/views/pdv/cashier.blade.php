@@ -10,7 +10,7 @@
     <form role="form" method="POST">
       {{ csrf_field() }}
       <div class="box-body">
-        <div class="col-md-5" style="left: 25%;">
+        <div class="col-md-5" style="left: 30%;">
           <div class="small-box bg-green">
             <div class="inner">
               <div class="form-group">
