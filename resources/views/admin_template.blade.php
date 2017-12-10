@@ -15,7 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="{{ asset("/css/adminlte-app.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("/css/adminlte.min.css")}}" rel="stylesheet" type="text/css" />
     <!-- Global JS -->
     <link href="{{ asset("/css/global.css")}}" rel="stylesheet" type="text/css" />
 
@@ -23,7 +23,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link href="{{ asset("/css/skins/skin-blue.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("/css/skins/_all-skins.css")}}" rel="stylesheet" type="text/css" />
+    <link href="http://smartseller.dev/css/skins/_all-skins.css" rel="stylesheet" type="text/css">
+
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset("/plugins/dataTables.bootstrap.css")}}">    
     <!-- Select2 -->
@@ -88,7 +90,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset("/plugins/select2.min.js") }}" type="text/javascript"></script>
 <!-- Global JS -->
 <script src="{{ asset ("/js/global.js") }}" type="text/javascript"></script>
-
+<!-- Demo JS -->
+<script src="{{ asset ("/js/demo.js") }}" type="text/javascript"></script>
+<!-- AdminLTE JS -->
+<script src="{{ asset ("/js/adminlte.min.js") }}" type="text/javascript"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience -->
