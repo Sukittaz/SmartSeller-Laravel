@@ -29,6 +29,8 @@ p {
 	line-height:60px;
 	vertical-align: middle;
 	font-size: 50px;
+	font-weight: bold;
+	color: rgb(19, 127, 200);
 	padding-left: 15px;
 }
 

@@ -21,7 +21,20 @@ class PdvController extends Controller {
 	}	
 
     public function index() {
+        $user  = User::with('bunch')->where('CompanyID', '=', $this->CompanyID)->get();
+        $array = array('user'=>$user);
 
-        return view('pdv/pdv');
+        return view('pdv/cashier', $array);        
+    }
+
+    public function pdv(){
+        $array = array();
+        $userID = session()->get('user')['UserID'];
+        $userName = session()->get('user')['UserName'];
+
+        $array['userID']   = $userID;
+        $array['userName'] = $userName;
+
+        return view('pdv/pdv', $array);        
     }
 }

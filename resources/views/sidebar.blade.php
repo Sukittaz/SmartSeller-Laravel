@@ -29,7 +29,7 @@
             @endif
             @if ($permission->hasPermission(2) == true)
             <li>
-              <a href="/pdv">
+              <a href="/cashier">
                 <i class="fa fa-money"></i><span>Frente de Caixa</span>
               </a>
             </li> 

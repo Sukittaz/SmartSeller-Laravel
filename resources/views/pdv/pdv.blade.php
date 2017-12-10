@@ -13,7 +13,7 @@
     <link href="http://smartseller.dev/css/adminlte-app.css" rel="stylesheet" type="text/css">
     <!-- PDV CSS -->
     <link href="http://smartseller.dev/css/pdv.css" rel="stylesheet" type="text/css">
-    <link href="http://smartseller.dev/css/skins/skin-blue.css" rel="stylesheet" type="text/css">
+    <link href="http://smartseller.dev/css/skins/_all-skins.css" rel="stylesheet" type="text/css">
 </head>
 <body class="skin-blue" >
 	<header class="main-header">
@@ -35,16 +35,16 @@
 	<div class="container-fluid">
 		<div class="row row-one text-center line-space">
 		  	<div class="col-md-1">
-		  		<p>Caixa:</p>
+		  		<p>Caixa: 001</p>
 		  	</div>		  	
 		  	<div class="col-md-3">
-		  		<p>Usuário:</p>
+		  		<p userID="{{ $userID }}">Usuário: {{ $userName }}</p>
 		  	</div>		  	
 		  	<div class="col-md-3">
-		  		<p>Vendedor(F1):</p>
+		  		<p userID="{{ $userID }}">Vendedor(F1): {{ $userName }}</p>
 		  	</div>
 		  	<div class="col-md-3">
-		  		<p>Cliente(F2):</p>
+		  		<p>Cliente(F2): CLIENTE BALCÃO</p>
 		  	</div>		  	
 		</div>
 		<div class="row row-two line-space">
@@ -123,64 +123,44 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<table class="table table-sm products-list-table">
+								<table class="table products-list-table">
 									<thead>
 								      <tr>
-								        <th>Nome</th>
-								        <th>Nome</th>
-								        <th>Nome</th>
-								        <th>Nome</th>
-								        <th>Nome</th>
-								        <th>Nome</th>
-								        <th>Nome</th>
-								        <th>Nome</th>
-								        <th>Nome</th>
+								        <th>CÓDIGO</th>
+								        <th>PRODUTO</th>
+								        <th>QTDE.</th>
+								        <th>VLR. UNIT.</th>
+								        <th>TOTAL</th>
 								      </tr>							
 									</thead>
 								      <tbody>
 									      <tr>
+									        <td>001</td>   
 									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
+									        <td>02</td>   
+									        <td>10.50</td>   
+									        <td>21.00</td>   
 									      </tr>
 									      <tr>
+									        <td>001</td>   
 									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
+									        <td>02</td>   
+									        <td>10.50</td>   
+									        <td>21.00</td>     
 									      </tr>
 									      <tr>
+									        <td>001</td>   
 									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
+									        <td>02</td>   
+									        <td>10.50</td>   
+									        <td>21.00</td>    
 									      </tr>
 									      <tr>
+									        <td>001</td>   
 									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
-									        <td>Coca-Cola</td>   
+									        <td>02</td>   
+									        <td>10.50</td>   
+									        <td>21.00</td>  
 								      </tbody>						
 								</table>	
 							</div>
