@@ -25,7 +25,7 @@ class CostumerController extends Controller {
 		$costumer = Costumer::where('CompanyID', '=', $this->CompanyID)->get();
 		$array = array('costumer'=>$costumer);
 
-        return view('costumer-list', $array);
+        return view('costumer/costumer-list', $array);
     }
 
     public function add(Request $request) {
@@ -62,14 +62,14 @@ class CostumerController extends Controller {
 			return redirect('/costumer');
 		}
 
-    	return view('costumer-add');	
+    	return view('costumer/costumer-add');	
     }
 
     public function view($id) {
 		$costumer = Costumer::find($id);
 		$array 	  = array('costumer'=>$costumer);
 
-        return view('costumer-view', $array);
+        return view('costumer/costumer-view', $array);
     } 
 
     public function edit(Request $request, $id) {
@@ -108,6 +108,6 @@ class CostumerController extends Controller {
 			return redirect('/costumer');
 		}       
 
-    	return view('costumer-edit', $array);	
+    	return view('costumer/costumer-edit', $array);	
 	}    
 }

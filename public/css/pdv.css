@@ -1,0 +1,92 @@
+p {
+	font-weight: bold;
+}
+
+.line-space-max{
+	margin-top: 50px;
+}
+
+.line-space{
+	margin-top: 30px;
+}
+
+.line-space-min{
+	margin-top: 10px;
+}
+
+.row-one{
+	background-color: rgb(239, 239, 245);
+	border-radius: 15px;
+	height: 30px;
+	line-height:30px;
+	vertical-align: middle;
+}
+
+.row-two{
+	background-color: rgb(239, 239, 245);
+	border-radius: 10px;
+	height: 60px;
+	line-height:60px;
+	vertical-align: middle;
+	font-size: 50px;
+	font-weight: bold;
+	color: rgb(19, 127, 200);
+	padding-left: 15px;
+}
+
+.shortcuts{
+	background-color: rgb(239, 239, 245);
+	border-radius: 10px;
+}
+
+.shortcuts ul li{
+	list-style-type: none;
+}
+
+.products-list {
+	background-color: rgb(255, 254, 198);
+	border-radius: 10px;
+}
+
+.linetop{
+	border-bottom: 1px solid #ccc;
+	padding: 10px 15px;
+	margin-bottom: 20px;
+}
+
+
+table {
+color: #333; /* Lighten up font color */
+font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+width: 640px;
+border-collapse:
+collapse; border-spacing: 0;
+}
+
+
+th {
+background: #F3F3F3; /* Light grey background */
+font-weight: bold; /* Make sure they're bold */
+}
+
+td {
+text-align: center; /* Center our text */
+}
+
+tbody td {border-bottom:1px dotted #ccc;}
+
+
+.products-list-table{
+	max-height: 250px;
+	overflow-y: scroll;
+	display: block;
+
+}
+
+.sale-price{
+	background-color: rgb(19, 127, 200);
+	border-radius: 8px;
+	font-size: 50px;
+	font-weight: bold;
+	color: white;
+}

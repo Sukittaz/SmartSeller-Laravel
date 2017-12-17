@@ -91,5 +91,16 @@ Route::post('bunch/add', 'BunchController@add');
 Route::get('bunch/edit/{id}', 'BunchController@edit');
 Route::post('bunch/edit/{id}', 'BunchController@edit');
 
+/* Routes PDV */
+Route::get('cashier', 'PdvController@index');
+Route::get('pdv/pdv', 'PdvController@pdv');
+
+/* Ajax */
+Route::get('ajax/searchProduct', 'AjaxController@searchProduct');
+Route::get('ajax/searchCostumer', 'AjaxController@searchCostumer');
+Route::get('ajax/searchEmployer', 'AjaxController@searchEmployer');
+
+
+
 
 Route::get('sale', 'SaleController@index');

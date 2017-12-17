@@ -26,12 +26,12 @@ class PurchaseController extends Controller {
         $purchase = Purchase::with('supplier')->where('CompanyID', '=', $this->CompanyID)->get();
         $array    = array('purchase'=>$purchase);
 
-        return view('purchase-list', $array);
+        return view('purchase/purchase-list', $array);
     }
 
     public function add() {
 
-        return view('purchase-add');
+        return view('purchase/purchase-add');
     }
 
 

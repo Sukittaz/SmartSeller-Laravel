@@ -62,9 +62,9 @@ class User extends Eloquent
 			session()->put('user', $data); 
 
 			return true;
-		}else{
-			return false;
-		}				  
+		}
+
+		return false;
 	}
 
 	public function isLogged() {

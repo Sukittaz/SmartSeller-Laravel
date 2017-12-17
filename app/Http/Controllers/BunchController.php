@@ -28,7 +28,7 @@ class BunchController extends Controller {
 
         $array = array('bunch'=>$bunch);
 
-        return view('bunch-list', $array);
+        return view('bunch/bunch-list', $array);
     }
 
     public function add(Request $request){
@@ -58,7 +58,7 @@ class BunchController extends Controller {
             return redirect('/bunch');
         }        
 
-        return view('bunch-add', $array);        
+        return view('bunch/bunch-add', $array);        
     }
 
     public function edit(Request $request, $id){
@@ -104,7 +104,7 @@ class BunchController extends Controller {
             return redirect('/bunch');
         }            
 
-        return view('bunch-edit', $array);   
+        return view('bunch/bunch-edit', $array);   
     }
 }
 

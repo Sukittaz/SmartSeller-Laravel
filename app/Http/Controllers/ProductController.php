@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Base\Category;
 use App\Models\Base\Product;
 use App\Models\Base\User;
 use App\Http\Requests;
@@ -25,15 +26,18 @@ class ProductController extends Controller {
 		$product = Product::with('category')->where('CompanyID', '=', $this->CompanyID)->get();
 		$array   = array('product'=>$product);
 
-        return view('product-list', $array);
+        return view('product/product-list', $array);
     }
 
     public function add(Request $request) {
+		$category = Category::where('CompanyID', '=', $this->CompanyID)->get();
+
+		$array = array('category'=>$category);
 
 		if ($request->has('submit')) {
 			$productName 	 = $request->input('ProductName');
 			$productCode 	 = $request->input('ProductCode');
-			$categoryID 	 = 3;
+			$categoryID 	 = $request->input('CategoryID');
 			$productTypeCalc = $request->input('ProductTypeCalc');
 			$productCost 	 = $request->input('ProductCost');
 			$productPrice 	 = $request->input('ProductPrice');
@@ -59,14 +63,14 @@ class ProductController extends Controller {
 			return redirect('/product');
 		}
 
-    	return view('product-add');	
+    	return view('product/product-add', $array);	
     }
 
     public function view($id) {
 		$product = Product::with('category')->find($id);
 		$array   = array('product'=>$product);
 
-        return view('product-view', $array);
+        return view('product/product-view', $array);
     }    
 
     public function edit(Request $request, $id) {
@@ -99,6 +103,6 @@ class ProductController extends Controller {
 			return redirect('/product');
 		}       
 
-    	return view('product-edit', $array);	
+    	return view('product/product-edit', $array);	
 	}       
 }

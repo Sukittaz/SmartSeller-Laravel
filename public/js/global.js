@@ -48,5 +48,18 @@ $(document).ready(function(){
 	});
 
 	//Initialize Select2 Elements
-	$('.select2').select2()
+	$('.select2').select2();
+
+	function setActiveLink(setActive){
+	    if ($("a").hasClass('active'))
+	        $("a").removeClass('active');
+	    if (setActive)
+	        $("#"+setActive).addClass('active');
+	}
+
+$(function() {
+    $("a").click(function() {
+        setActiveLink(this.id);
+    });
+});
 });

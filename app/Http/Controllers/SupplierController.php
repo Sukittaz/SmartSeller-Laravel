@@ -26,7 +26,7 @@ class SupplierController extends Controller {
 		$supplier = Supplier::where('CompanyID', '=', $this->CompanyID)->get();
 		$array = array('supplier'=>$supplier);
 
-        return view('supplier-list', $array);
+        return view('supplier/supplier-list', $array);
     }
 
     public function add(Request $request) {
@@ -49,14 +49,14 @@ class SupplierController extends Controller {
 			return redirect('/supplier');
 		}
 
-    	return view('supplier-add');	
+    	return view('supplier/supplier-add');	
     }
 
     public function view($id) {
 		$supplier = Supplier::find($id);
 		$array 	  = array('supplier'=>$supplier);
 
-        return view('supplier-view', $array);
+        return view('supplier/supplier-view', $array);
     } 
 
     public function edit(Request $request, $id) {
@@ -81,7 +81,7 @@ class SupplierController extends Controller {
 			return redirect('/supplier');
 		}       
 
-    	return view('supplier-edit', $array);	
+    	return view('supplier/supplier-edit', $array);	
 	}    
 
 }

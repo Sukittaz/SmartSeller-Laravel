@@ -1,10 +1,4 @@
-<?php
-use App\Models\Base\Permission;
-
-$permission = new Permission;
-
-?>
-
+<?php use App\Models\Base\Permission; $permission = new Permission; ?>
 
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
@@ -35,7 +29,7 @@ $permission = new Permission;
             @endif
             @if ($permission->hasPermission(2) == true)
             <li>
-              <a href="">
+              <a href="/cashier">
                 <i class="fa fa-money"></i><span>Frente de Caixa</span>
               </a>
             </li> 
