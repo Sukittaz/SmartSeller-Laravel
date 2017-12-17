@@ -15,7 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="{{ asset("/css/adminlte.min.css")}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("/css/adminlte-app.css")}}" rel="stylesheet" type="text/css" />
     <!-- Global JS -->
     <link href="{{ asset("/css/global.css")}}" rel="stylesheet" type="text/css" />
 
