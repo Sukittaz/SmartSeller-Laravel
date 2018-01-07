@@ -26,82 +26,60 @@
                 <i class="fa fa-dashboard"></i><span>DashBoard</span>
               </a>
             </li>
-            @endif
-            @if ($permission->hasPermission(2) == true)
-            <li>
-              <a href="/cashier">
-                <i class="fa fa-money"></i><span>Frente de Caixa</span>
-              </a>
-            </li> 
-            @endif
-            @if ($permission->hasPermission(3) == true)
-            <li>
-              <a href="/product">
-                <i class="fa fa-barcode"></i><span>Produtos</span>
-              </a>
-            </li> 
-            @endif
-            @if ($permission->hasPermission(4) == true)
-            <li>
-              <a href="/category">
-                <i class="fa fa-folder"></i><span>Categorias</span>
-              </a>
-            </li>  
-            @endif
-            @if ($permission->hasPermission(5) == true)
-            <li>
-              <a href="">
-                <i class="fa fa-shopping-cart"></i><span>Vendas</span>
-              </a>
-            </li>  
-            @endif
-            @if ($permission->hasPermission(6) == true)
-            <li>
-              <a href="/purchase">
-                <i class="fa fa-plus"></i><span>Compras</span>
-              </a>
-            </li> 
-            @endif
-            @if ($permission->hasPermission(7) == true)
-            <li>
-              <a href="/expense">
-                <i class="fa fa-minus"></i><span>Despesas</span>
-              </a>
-            </li> 
-            @endif
-            @if ($permission->hasPermission(8) == true)
+            @endif          
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-users"></i>
-                <span>Pessoas</span>
+                <i class="fa fa-gear"></i>
+                <span>Gestão Empresarial</span>
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/bunch"><i class="fa fa-circle-o"></i>Grupos</a></li>
-                <li><a href="/user"><i class="fa fa-circle-o"></i>Usuários</a></li>
                 <li><a href="/costumer"><i class="fa fa-circle-o"></i>Clientes</a></li>
                 <li><a href="/supplier"><i class="fa fa-circle-o"></i>Fornecedores</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Transportadoras</a></li>
+                <li><a href="/product"><i class="fa fa-circle-o"></i>Produtos</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Serviços</a></li>
+                <li><a href="/category"><i class="fa fa-circle-o"></i>Categorias</a></li>
+                <li><a href="/user"><i class="fa fa-circle-o"></i>Usuários</a></li>
+                <li><a href="/bunch"><i class="fa fa-circle-o"></i>Grupos</a></li>
+                @if ($permission->hasPermission(6) == true)
+                    <li><a href="/purchase"><i class="fa fa-circle-o"></i>Compras</a></li>
+                @endif
+                @if ($permission->hasPermission(7) == true)
+                    <li><a href="/expense"><i class="fa fa-circle-o"></i>Despesas</a></li>
+                @endif
               </ul>
-            </li> 
-            @endif
-            @if ($permission->hasPermission(9) == true)
+            </li>    
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-bar-chart-o"></i>
-                <span>Relátorios</span>
+                <i class="fa fa-dollar"></i>
+                <span>Gestão Comercial</span>
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href=""><i class="fa fa-circle-o"></i>Vendas Diárias</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i>Vendas Mensais</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i>Produtos mais vendidos</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Pedido</a></li>
+                <li><a href="/supplier"><i class="fa fa-circle-o"></i>Orçamento</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Ordem de Serviço</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Comanda</a></li>
               </ul>
-            </li>
-            @endif
+            </li>     
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-dollar"></i>
+                <span>Financeiro</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/cashier"><i class="fa fa-circle-o"></i>Frente de Caixa</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Relátorios Financeiros</a></li>
+              </ul>
+            </li>                               
             @if ($permission->hasPermission(10) == true)
             <li class="treeview">
               <a href="#">
