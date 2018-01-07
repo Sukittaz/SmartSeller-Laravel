@@ -91,6 +91,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/company"><i class="fa fa-circle-o"></i>Empresa</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i>Sistema</a></li>
               </ul>
             </li> 
             @endif
