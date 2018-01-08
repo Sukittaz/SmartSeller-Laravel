@@ -29,7 +29,7 @@
                 </select>
               </div>                                
             </div>
-            <a href="/pdv/pdv" class="small-box-footer">
+            <a href="/pdv" class="small-box-footer">
              Abrir Caixa <i class="fa fa-arrow-circle-right"></i>
             </a>
           </div>
