@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Base\Bunch;
-use App\Models\Base\User;
+use App\Repositories\UserRepository;
 use App\Models\Base\Permission;
 use App\Models\Base\BunchPermission;
 use App\Http\Requests;
@@ -16,12 +16,11 @@ class BunchController extends Controller {
 
     public function __construct(Redirector $redirect) {
         $this->CompanyID = session()->get('user')['CompanyID'];
-
-        $user = new User;
-        if($user->isLogged() == false) {
+        
+        if(UserRepository::isLogged() == false) {
             $redirect->to('login')->send();
         }
-    }   
+    } 
 
     public function index() {
         $bunch = Bunch::where('CompanyID', '=', $this->CompanyID)->get();
