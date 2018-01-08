@@ -4,16 +4,16 @@
     <title>Frente de Caixa</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.2 -->
-    <link href="http://smartseller.dev/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css">
     <!-- Theme style -->
-    <link href="http://smartseller.dev/css/adminlte-app.css" rel="stylesheet" type="text/css">
+    <link href="/css/adminlte-app.css" rel="stylesheet" type="text/css">
     <!-- PDV CSS -->
-    <link href="http://smartseller.dev/css/pdv.css" rel="stylesheet" type="text/css">
-    <link href="http://smartseller.dev/css/skins/_all-skins.css" rel="stylesheet" type="text/css">
+    <link href="/css/pdv.css" rel="stylesheet" type="text/css">
+    <link href="/css/skins/_all-skins.css" rel="stylesheet" type="text/css">
 </head>
 <body class="skin-blue" >
 	<header class="main-header">
@@ -99,15 +99,8 @@
 		  		<div class="col-md-9 line-space-min">
 		  			<div class="row shortcuts">
 		  				<ul>
-		  					<li>(F11) Finalizar Venda</li>
-		  					<li>(F11) Finalizar Venda</li>
-		  					<li>(F11) Finalizar Venda</li>
-		  					<li>(F11) Finalizar Venda</li>
-		  					<li>(F11) Finalizar Venda</li>
-		  					<li>(F11) Finalizar Venda</li>
-		  					<li>(F11) Finalizar Venda</li>
-		  					<li>(F11) Finalizar Venda</li>
-		  					<li>(F11) Finalizar Venda</li>
+		  					<li>(F1) Buscar Clientes</li>
+		  					<li>(F2) Buscar Produto</li>
 		  				</ul>
 		  			</div>
 		  		</div>		  				  				    			    			    
@@ -134,34 +127,14 @@
 								      </tr>							
 									</thead>
 								      <tbody>
-									      <tr>
-									        <td>001</td>   
-									        <td>Coca-Cola</td>   
-									        <td>02</td>   
+									      <tr count="2" product="COD001" value="21.00">
+									        <td>001</td>
+									        <td>Coca-Cola</td>
+									        <td>02</td>
 									        <td>10.50</td>   
-									        <td>21.00</td>   
+									        <td>21.00</td>
 									      </tr>
-									      <tr>
-									        <td>001</td>   
-									        <td>Coca-Cola</td>   
-									        <td>02</td>   
-									        <td>10.50</td>   
-									        <td>21.00</td>     
-									      </tr>
-									      <tr>
-									        <td>001</td>   
-									        <td>Coca-Cola</td>   
-									        <td>02</td>   
-									        <td>10.50</td>   
-									        <td>21.00</td>    
-									      </tr>
-									      <tr>
-									        <td>001</td>   
-									        <td>Coca-Cola</td>   
-									        <td>02</td>   
-									        <td>10.50</td>   
-									        <td>21.00</td>  
-								      </tbody>						
+								      </tbody>
 								</table>	
 							</div>
 						</div>
@@ -172,7 +145,7 @@
 						<div class="col-md-4 col-md-offset-8">
 							<div class="row text-center">
 								<div class="col-md-12 sale-price">
-									<p>R$: 950,00</p>
+									<p>R$: <span>0.00</span></p>
 								</div>
 							</div>
 						</div>
@@ -182,11 +155,11 @@
 		</div>
 	</div>
 	<!-- JQuery -->
-	<script src="{{ asset ("/plugins/jQuery-2.2.3.min.js") }}"></script>
+	<script src="{{ asset ("/plugins/jquery-2.2.3.min.js") }}"></script>
 	<!-- Bootstrap 3.3.2 JS -->
 	<script src="{{ asset ("/plugins/bootstrap.min.js") }}" type="text/javascript"></script>	
 	<!-- PDV JS -->
-	<script src="{{ asset ("/js/pdv.js") }}" type="text/javascript"></script>	
+	<script src="{{ asset ("/js/pdv.js") }}" type="text/javascript"></script>
 	<!-- Modals Includes -->
 	@include('modal/modal-costumer')
 	@include('modal/modal-employer')

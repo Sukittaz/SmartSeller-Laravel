@@ -93,7 +93,7 @@ Route::post('bunch/edit/{id}', 'BunchController@edit');
 
 /* Routes PDV */
 Route::get('cashier', 'PdvController@index');
-Route::get('pdv/pdv', 'PdvController@pdv');
+Route::get('pdv', 'PdvController@pdv');
 
 /* Ajax */
 Route::get('ajax/searchProduct', 'AjaxController@searchProduct');
