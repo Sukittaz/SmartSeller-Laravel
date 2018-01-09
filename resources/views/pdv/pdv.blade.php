@@ -54,7 +54,7 @@
 		  	<div class="col-md-4">
 			    <div class="form-group">
 			      <label>Código Produto:</label>
-			      <input type="text" name="ProductCode" class="form-control">
+			      <input type="text" name="ProductCode" quantit="1" class="form-control">
 			    </div>
 		  		<div class="row">
 				    <div class="form-group">
@@ -127,13 +127,6 @@
 								      </tr>							
 									</thead>
 								      <tbody>
-									      <tr count="2" product="COD001" value="21.00">
-									        <td>001</td>
-									        <td>Coca-Cola</td>
-									        <td>02</td>
-									        <td>10.50</td>   
-									        <td>21.00</td>
-									      </tr>
 								      </tbody>
 								</table>	
 							</div>

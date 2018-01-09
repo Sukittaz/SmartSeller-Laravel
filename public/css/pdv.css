@@ -83,6 +83,11 @@ tbody td {border-bottom:1px dotted #ccc;}
 
 }
 
+.products-list-table tbody tr td{
+	border-top: #333;
+}
+
+
 .sale-price{
 	background-color: rgb(19, 127, 200);
 	border-radius: 8px;

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Repositories\ProductRepository as product;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,14 +13,15 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::group(['prefix' => 'v1/products/'], function () {
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+    Route::get('/', function () {
+        return response()->json(['message' => 'ALL PRODUCTS', 'status' => 'Connected']);
+    });
 
-Route::group(['prefix' => 'v1','middleware' => 'auth:api'], function () {
-    //    Route::resource('task', 'TasksController');
+    Route::get('{product}', function ($product) {
+        $result = Product::getProductById($product);
+        return response()->json($result);
+    });
 
-    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
-    #adminlte_api_routes
 });
